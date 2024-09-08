@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Instagram Profil Analiz Uygulaması
 
-## Getting Started
+## İçindekiler
+1. [Proje Hakkında](#proje-hakkında)
+2. [Kurulum](#kurulum)
+3. [Kullanım](#kullanım)
+4. [Teknolojiler](#teknolojiler)
+5. [Geliştirme](#geliştirme)
 
-First, run the development server:
+## Proje Hakkında
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Bu proje, Instagram kullanıcı adlarını analiz eden bir web uygulamasıdır. Kullanıcılar, bir Instagram kullanıcı adı girerek profil analizi yapabilirler.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Kurulum
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Önkoşullar
+- Node.js (v14.0.0 veya üzeri)
+- npm (v6.0.0 veya üzeri)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adımlar
 
-## Learn More
+1. **Repository'yi klonlayın:**
+   ```bash
+   git clone https://github.com/efrann/insta_analiz.git
+   cd insta_analiz
 
-To learn more about Next.js, take a look at the following resources:
+2. **Bağımlılıkları yükleyin:**
+   ```bash
+    npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Sunucuyu Baslat:**
+   ```bash
+    npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Kullanım
+- Ana sayfada, Instagram kullanıcı adı giriş alanını bulun.
+- Analiz etmek istediğiniz Instagram kullanıcı adını girin.
+- "Analiz Et" butonuna tıklayın.
+- Sonuçları görüntüleyin (Not: Şu anki versiyonda gerçek analiz yapılmamaktadır).
 
-## Deploy on Vercel
+## Teknolojiler
+- next.js
+- tailwind CSS
+- Framer Motion
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Geliştirme
+### Yeni özellik ekleme adımları
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Yeni branch olustur:**
+   ```bash
+   git checkout -b feature/YeniOzellikAdi
+
+2. **Degisiklik yap commit et:**
+   ```bash
+    git commit -m "Yeni özellik: Özellik açıklaması"
+
+3. **Push:**
+   ```bash
+    git push origin feature/YeniOzellikAdi
