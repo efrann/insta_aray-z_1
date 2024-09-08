@@ -1,4 +1,5 @@
 # Instagram Profil Analiz Uygulaması
+![Home Page](./homepage.png)
 
 ## İçindekiler
 1. [Proje Hakkında](#proje-hakkında)
