@@ -21,7 +21,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/:path*',
+        source: '/api/:path*', //frontenddeki api isteklerini backenddeki api isteklerine yönlendirir.
+        //components/instagarmAnalyzer.js içindeki fetch isteği bu şekilde çalışır.
         destination: 'http://localhost:8000/api/:path*',
       },
     ];

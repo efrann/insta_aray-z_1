@@ -1,4 +1,4 @@
-// File: /Users/ef/insta_analiz/frontend/src/app/results/page.js
+// File: /Users/ef/Desktop/insta_analiz/frontend/src/app/results/page.js
 import * as entry from '../../../../src/app/results/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

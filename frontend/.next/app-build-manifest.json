@@ -11,6 +11,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/results/[username]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/results/[username]/page.js"
+    ],
     "/results/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

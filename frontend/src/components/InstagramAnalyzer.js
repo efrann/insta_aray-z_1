@@ -2,37 +2,56 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Instagram, HelpCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Instagram, HelpCircle } from 'lucide-react'; //icon kullanımı
+import { motion, AnimatePresence } from 'framer-motion'; // animasyyonlar ve geçişler
 
 const InstagramAnalyzer = () => {
   const [username, setUsername] = useState('');
   const [showTip, setShowTip] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const router = useRouter();
 
+//username kullanıcıdan alınır ve instagram kullanıcı adını saklar.
+//showtip, 3 saniye sonra true olur ve tip kullanıcıya gösterilir.
+//loading, api isteği yapılırken true olur ve analiz ediliyor yazısını gösterir. Yükleme durumunu kullanıcıya gösterir.
+//error, hata mesajını gösterir.
+//router, sonuçlar sayfasına yönlendirir.
+
+
   useEffect(() => {
-    const timer = setTimeout(() => setShowTip(true), 3000);
+    const timer = setTimeout(() => setShowTip(true), 3000); // 3 saniye sonra showtip true olur ve tip kullanıcıya gösterilir. Burada 3 saniye alınıyor.
     return () => clearTimeout(timer);
   }, []);
 
+
+  //Form gönderildiiğinde çalışır.
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
+  
     try {
-      const response = await fetch('/api/analyze/', {
+      console.log('Sending request for username:', username);
+      const response = await fetch('/api/analyze/', { // api/analyze/ kısmında backend kısmında oluşturduğumuz route'a yönlendirir.
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username }),
       });
-      if (!response.ok) throw new Error('API request failed');
+  
       const data = await response.json();
-      router.push(`/results?data=${encodeURIComponent(JSON.stringify(data))}`);
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while analyzing the profile');
+  
+      if (!response.ok) {
+        throw new Error(data.error || `API request failed with status ${response.status}`);
+      }
+  
+      console.log('Received data:', data);
+      router.push(`/results/${username}`); //Analiz sonuclarını gösteren sayfaya yönlendirir.
+    } catch (err) {
+      console.error('Error:', err);
+      setError(err.message || 'An error occurred while analyzing the profile');
     } finally {
       setLoading(false);
     }
@@ -84,6 +103,8 @@ const InstagramAnalyzer = () => {
           </button>
         </div>
       </motion.form>
+
+      {error && <p className="text-red-500 text-center">{error}</p>}
 
       <AnimatePresence>
         {showTip && (

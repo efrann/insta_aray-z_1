@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Analysis Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Instagram Analysis Dashboard</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {% for analysis in analyses %}
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-semibold">{{ analysis.full_name }} (@{{ analysis.username }})</h2>
+                <p>Followers: {{ analysis.followers_count }}</p>
+                <p>Following: {{ analysis.follows_count }}</p>
+                <p>Posts: {{ analysis.posts_count }}</p>
+                <p>Analyzed at: {{ analysis.analyzed_at }}</p>
+                <h3 class="mt-2 font-semibold">Top Posts:</h3>
+                <ul>
+                    {% for post in analysis.popular_posts.all %}
+                    <li>Likes: {{ post.likes_count }}, Comments: {{ post.comments_count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app/page.js -> ../components/InstagramAnalyzer\":{\"id\":\"app/page.js -> ../components/InstagramAnalyzer\",\"files\":[\"static/chunks/_app-pages-browser_src_components_InstagramAnalyzer_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"
