@@ -36,8 +36,12 @@ Bu proje, Instagram kullanıcı adlarını analiz eden bir web uygulamasıdır. 
 ## Kullanım
 - Ana sayfada, Instagram kullanıcı adı giriş alanını bulun.
 - Analiz etmek istediğiniz Instagram kullanıcı adını girin.
+<<<<<<< HEAD
 - "Analiz Et" butonuna tıklayın.
 - Sonuçları görüntüleyin (Not: Şu anki versiyonda gerçek analiz yapılmamaktadır).
+=======
+- "Analiz Et" butonuna tıklayın..
+>>>>>>> master
 
 ## Teknolojiler
 - next.js
@@ -53,6 +57,7 @@ Bu proje, Instagram kullanıcı adlarını analiz eden bir web uygulamasıdır. 
 
 2. **Degisiklik yap commit et:**
    ```bash
+    git add .
     git commit -m "Yeni özellik: Özellik açıklaması"
 
 3. **Push:**
