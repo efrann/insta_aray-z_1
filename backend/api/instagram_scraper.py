@@ -51,6 +51,7 @@ def process_posts_data(data):
                 "created_at": item.get("caption", {}).get("created_at"),
                 "created_at_utc": item.get("caption", {}).get("created_at_utc"),
                 "text": item.get("caption", {}).get("text"),
+                "url": min(item.get("image_versions", {}).get("items", []), key=lambda x: x.get("width", 0)).get("url") if item.get("image_versions", {}).get("items") else None,
             },
             "like_count": item.get("like_count", 0),
             "comment_count": item.get("comment_count", 0),

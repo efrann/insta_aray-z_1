@@ -4,7 +4,7 @@ import json
 def get_instagram_user_info(username):
     conn = http.client.HTTPSConnection("instagram-scraper-api2.p.rapidapi.com")
     headers = {
-        'x-rapidapi-key': "9cf1b4a59emsh2f1920dd6f80a7ap1c60abjsn20a97356e1d4",
+        'x-rapidapi-key': "f22918d99dmsh71acada7ddbd749p127222jsna09892e6c54f",
         'x-rapidapi-host': "instagram-scraper-api2.p.rapidapi.com"
     }
     conn.request("GET", f"/v1/info?username_or_id_or_url={username}&include_about=true", headers=headers)
@@ -64,7 +64,7 @@ def process_instagram_data(user_info, posts_data):
             },
             "like_count": item.get("like_count", 0),
             "comment_count": item.get("comment_count"),
-            "thumbnail_url": item.get("thumbnail_url"),
+            "thumbnail_url": item.get("thumbnail_url")[1],
             "tagged_users": [
                 {"user": {"username": user.get("user", {}).get("username")}}
                 for user in item.get("tagged_users", [])

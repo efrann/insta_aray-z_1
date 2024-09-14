@@ -26,12 +26,13 @@ class InstagramAnalyzeView(APIView):
 
             processed_user_data = process_user_data(user_data)
             processed_posts_data = process_posts_data(posts_data)
-
+            print(json.dumps(processed_posts_data, indent=4, ensure_ascii=False))
             # Combine data
             combined_data = {
                 "user_profile": processed_user_data["data"],
                 "user_posts": processed_posts_data["data"]
             }
+
             
             # AI analizi için yer tutucu
             # Gelecekte buraya AI analizi eklenecek
