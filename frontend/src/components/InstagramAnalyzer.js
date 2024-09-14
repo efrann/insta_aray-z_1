@@ -20,7 +20,7 @@ const InstagramAnalyzer = () => {
 
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowTip(true), 3000); // 3 saniye sonra showtip true olur ve tip kullanıcıya gösterilir. Burada 3 saniye alınıyor.
+    const timer = setTimeout(() => setShowTip(true), 1000); // 3 saniye sonra showtip true olur ve tip kullanıcıya gösterilir. Burada 3 saniye alınıyor.
     return () => clearTimeout(timer);
   }, []);
 
@@ -28,6 +28,8 @@ const InstagramAnalyzer = () => {
   //Form gönderildiiğinde çalışır.
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return; // Eğer zaten analiz yapılıyorsa, yeni istek gönderme
+    
     setLoading(true);
     setError(null);
   

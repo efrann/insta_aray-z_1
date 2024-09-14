@@ -4,7 +4,7 @@ import json
 def get_instagram_data(username, endpoint):
     conn = http.client.HTTPSConnection("instagram-scraper-api2.p.rapidapi.com")
     headers = {
-        'x-rapidapi-key': "9cf1b4a59emsh2f1920dd6f80a7ap1c60abjsn20a97356e1d4",
+        'x-rapidapi-key': "f22918d99dmsh71acada7ddbd749p127222jsna09892e6c54f",
         'x-rapidapi-host': "instagram-scraper-api2.p.rapidapi.com"
     }
     conn.request("GET", endpoint.format(username), headers=headers)

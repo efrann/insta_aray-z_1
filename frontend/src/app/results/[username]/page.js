@@ -15,16 +15,25 @@ const ResultsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Önce localStorage'dan veriyi kontrol edelim
+        const cachedData = localStorage.getItem(`instagramAnalysis_${username}`);
+        if (cachedData) {
+          setData(JSON.parse(cachedData));
+          setLoading(false);
+          return;
+        }
+
+        // Eğer localStorage'da veri yoksa, API'ye istek atalım
         const response = await fetch(`/api/analyze`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username }),
         });
         if (!response.ok) throw new Error('Failed to fetch data');
         const result = await response.json();
         setData(result);
+        // Yeni veriyi localStorage'a kaydedelim
+        localStorage.setItem(`instagramAnalysis_${username}`, JSON.stringify(result));
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(error.message);
@@ -127,6 +136,16 @@ const ResultsPage = () => {
           ))}
         </div>
       </div>
+      
+      {/* AI Analysis Section */}
+      {data.ai_analysis && (
+        <div className="bg-gray-800 rounded-lg p-6 shadow-lg mt-8">
+          <h3 className="text-2xl font-bold mb-4">Yapay Zeka Analizi</h3>
+          <pre className="whitespace-pre-wrap">
+            {JSON.stringify(data.ai_analysis, null, 2)}
+          </pre>
+        </div>
+      )}
     </div>
   );
 };

@@ -5,13 +5,15 @@ class PopularPostInline(admin.TabularInline):
     model = PopularPost
     extra = 0
 
-@admin.register(InstagramAnalysis)
 class InstagramAnalysisAdmin(admin.ModelAdmin):
-    list_display = ('username', 'full_name', 'followers_count', 'analyzed_at')
+    list_display = ('username', 'full_name', 'follower_count', 'following_count', 'posts_count', 'analyzed_at')
     search_fields = ('username', 'full_name')
-    inlines = [PopularPostInline]
+    list_filter = ('analyzed_at',)
 
-@admin.register(PopularPost)
 class PopularPostAdmin(admin.ModelAdmin):
     list_display = ('analysis', 'likes_count', 'comments_count')
     search_fields = ('analysis__username', 'caption')
+    list_filter = ('analysis',)
+
+admin.site.register(InstagramAnalysis, InstagramAnalysisAdmin)
+admin.site.register(PopularPost, PopularPostAdmin)

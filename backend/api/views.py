@@ -4,9 +4,10 @@ from rest_framework import status
 from django.shortcuts import render
 import logging
 import traceback
+import json
 from .models import InstagramAnalysis, PopularPost
-from api.instagram_scraper import get_instagram_data, process_user_data, process_posts_data
-
+from .instagram_scraper import get_instagram_data, process_user_data, process_posts_data
+# from .ai_service import analyze_with_ai  # Şimdilik yorum satırına alıyoruz
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +25,6 @@ class InstagramAnalyzeView(APIView):
             posts_data = get_instagram_data(username, "/v1.2/posts?username_or_id_or_url={}")
 
             processed_user_data = process_user_data(user_data)
-            #print(processed_user_data)
             processed_posts_data = process_posts_data(posts_data)
 
             # Combine data
@@ -33,6 +33,10 @@ class InstagramAnalyzeView(APIView):
                 "user_posts": processed_posts_data["data"]
             }
             
+            # AI analizi için yer tutucu
+            # Gelecekte buraya AI analizi eklenecek
+            # combined_data["ai_analysis"] = analyze_with_ai(combined_data)
+
             # Save or update the analysis
             analysis, created = InstagramAnalysis.objects.update_or_create(
                 username=combined_data["user_profile"]["about"]["username"],
@@ -41,8 +45,9 @@ class InstagramAnalyzeView(APIView):
                     'biography': combined_data["user_profile"]["biography"],
                     'follower_count': combined_data["user_profile"]["follower_count"],
                     'following_count': combined_data["user_profile"]["following_count"],
-                    'posts_count': combined_data["user_profile"]["media_count"],  # adjust according to actual data
-                    'profile_pic_url': combined_data["user_profile"]["hd_profile_pic_versions"],
+                    'posts_count': combined_data["user_profile"]["media_count"],
+                    'profile_pic_url': combined_data["user_profile"]["hd_profile_pic_versions"]["url"],
+                    # 'ai_analysis': combined_data.get("ai_analysis", ""),  # Gelecekte AI analizi için
                 }
             )
 
@@ -54,16 +59,13 @@ class InstagramAnalyzeView(APIView):
                     analysis=analysis,
                     image_url=post.get('thumbnail_url', ''),
                     caption=post.get('caption', {}).get('text', '')[:500],  # Limit caption length
-                    location=post.get('caption', {}).get('location', {}).get('city_name', ''),
+                    location=post.get('location', {}).get('city_name', ''),
                     likes_count=post.get('like_count', 0),
                     comments_count=post.get('comment_count', 0)
                 )
 
-            # Prepare the response
-            summary = combined_data
-
             logger.info(f"Successfully analyzed and saved profile for username: {username}")
-            return Response(summary)
+            return Response(combined_data)
 
         except Exception as e:
             logger.error(f"Error during analysis for username {username}: {str(e)}")
