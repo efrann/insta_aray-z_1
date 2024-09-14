@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class InstagramAnalyzeView(APIView):
     def post(self, request):
+        # Kullanıcı adını al ve kontrol et
         username = request.data.get('username')
         if not username:
             return Response({'error': 'Username is required'}, status=status.HTTP_400_BAD_REQUEST)
@@ -20,14 +21,19 @@ class InstagramAnalyzeView(APIView):
         try:
             logger.info(f"Analyzing profile for username: {username}")
             
-            # Fetch and process data
+            # Instagram verilerini çek ve işle
             user_data = get_instagram_data(username, "/v1/info?username_or_id_or_url={}&include_about=true")
             posts_data = get_instagram_data(username, "/v1.2/posts?username_or_id_or_url={}")
 
+            # Verileri işle
             processed_user_data = process_user_data(user_data)
             processed_posts_data = process_posts_data(posts_data)
+            
+            # İşlenmiş verileri yazdır (debug amaçlı)
+            print(json.dumps(processed_user_data, indent=4, ensure_ascii=False))
             print(json.dumps(processed_posts_data, indent=4, ensure_ascii=False))
-            # Combine data
+            
+            # Kullanıcı profili ve gönderilerini birleştir
             combined_data = {
                 "user_profile": processed_user_data["data"],
                 "user_posts": processed_posts_data["data"]
