@@ -79,7 +79,7 @@ def process_instagram_data(user_info, posts_data):
     return processed_data
 
 def main():
-    username = "yalcin_alaman"
+    username = "alibicim"
     user_info = get_instagram_user_info(username)
     posts_data = get_instagram_posts(username)
     processed_data = process_instagram_data(user_info, posts_data)

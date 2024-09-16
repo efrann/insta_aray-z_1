@@ -1,0 +1,49 @@
+{
+    "data": {
+        "about": {
+            "country": null,
+            "date_joined": "June 2014",
+            "date_verified": null,
+            "is_verified": null,
+            "username": "egefitness"
+        },
+        "bio_links": [
+            {
+                "icon_url": "",
+                "image_url": "",
+                "is_pinned": false,
+                "is_verified": false,
+                "link_id": 17979032102578558,
+                "link_type": "external",
+                "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fwww.unsgear.com%2Fkategori%2Fegitim%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaZERDOfNV2tF0DMVTI7Tu0G6ZwZiKs8OdPy5FVGtIz4-kVTPVMiH9wHqjs_aem_JmnsoilvxMID06WfoE5Fcw&e=AT1w79-kO1BAeYxTkZ9HGwEhbO5JTnA2jfoSGsHqR33uxcoYaW0NpqzuBTo169xM3pn9uyHbntxthMguVWEynO3yFpw68rZXUKRKTZ8",
+                "open_external_url_with_in_app_browser": true,
+                "title": "Bireysel Uzaktan Eğitim",
+                "url": "https://www.unsgear.com/kategori/egitim"
+            }
+        ],
+        "biography": "@proteinocean Kodu: Egefitness\n@unsatisfiedgear Athlete\n2nd acct.: @egefitnezz \n⬇️1e1 Koçluk (Sınırlı Kontenjan)⬇️",
+        "category": "",
+        "category_id": 0,
+        "full_name": "Ege Fitness",
+        "hd_profile_pic_versions": [
+            {
+                "height": 320,
+                "url": "https://scontent-ams2-1.cdninstagram.com/v/t51.2885-19/457343471_476759445240266_6507531336124846089_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_cat=1&_nc_ohc=g8nQqomeDSEQ7kNvgGc6YA3&edm=AO4kU9EBAAAA&ccb=7-5&oh=00_AYBW9k9MUel02iYe54f-TjoLGLKaRbz7En6DH1UhgNrsQg&oe=66EBFAA7&_nc_sid=164c1d",
+                "width": 320
+            }
+        ],
+        "location_data": {
+            "city_name": ""
+        },
+        "media_count": 36,
+        "profile_pic_url": "https://scontent-ams2-1.cdninstagram.com/v/t51.2885-19/457343471_476759445240266_6507531336124846089_n.jpg?stp=dst-jpg_e0_s150x150&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_cat=1&_nc_ohc=g8nQqomeDSEQ7kNvgGc6YA3&_nc_gid=2f5b57149f3b4643af1a3b9032022ba0&edm=AO4kU9EBAAAA&ccb=7-5&oh=00_AYDuV5h1rvmHLaW1Xojryka3InLUAEExKdRy35C_k1cpQg&oe=66EBFAA7&_nc_sid=164c1d",
+        "profile_pic_url_hd": "https://scontent-ams2-1.cdninstagram.com/v/t51.2885-19/457343471_476759445240266_6507531336124846089_n.jpg?stp=dst-jpg_s640x640&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_cat=1&_nc_ohc=g8nQqomeDSEQ7kNvgGc6YA3&edm=AO4kU9EBAAAA&ccb=7-5&oh=00_AYAsjgs5S9RuI0G2jU9nhEfvqA6Vq-NYEJkOtG0i0GlDhQ&oe=66EBFAA7&_nc_sid=164c1d",
+        "public_email": "eslem.oktay@fenomio.com",
+        "public_phone_number": "",
+        "followers_count": 893911,
+        "following_count": 277,
+        "posts": {
+            "items": []
+        }
+    }
+}
