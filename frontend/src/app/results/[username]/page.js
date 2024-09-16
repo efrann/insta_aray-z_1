@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { User, Users, Image as LucideImage, MessageCircle, Heart, ChevronDown, Link as LinkIcon } from 'lucide-react';
+import { User, Users, Image as LucideImage, MessageCircle, Heart, ChevronDown, Link as LinkIcon, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -73,13 +73,13 @@ const ResultsPage = () => {
   const { user_profile, user_posts } = data;
 
   return (
-    <div className="min-h-screen bg-indigo-900 text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white p-8">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl font-bold text-center mb-12 text-pink-500"
+          className="text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500"
         >
           Instagram Profil Analizi Sonuçları
         </motion.h1>
@@ -88,20 +88,20 @@ const ResultsPage = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="bg-indigo-800 rounded-lg p-8 shadow-2xl mb-12"
+          className="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-lg p-8 shadow-2xl mb-12"
         >
-          <div className="flex items-start mb-6">
+          <div className="flex items-center mb-6">
             <Image 
               src={user_profile.hd_profile_pic_versions?.url || '/default-avatar.png'}
               alt={user_profile.username} 
-              width={100} 
-              height={100} 
-              className="rounded-full mr-6"
+              width={120} 
+              height={120} 
+              className="rounded-full mr-6 border-4 border-pink-500"
             />
             <div>
               <h2 className="text-3xl font-bold">{user_profile.full_name}</h2>
               <p className="text-xl text-pink-400">@{user_profile.about.username}</p>
-              <div className="text-gray-300 mt-2">
+              <div className="tflex justify-between mb-6">
                 {formatBiography(user_profile.biography)}
                 {user_profile.bio_links && user_profile.bio_links.length > 0 && user_profile.bio_links[0].url && (
                   <a 
@@ -124,7 +124,7 @@ const ResultsPage = () => {
           </div>
         </motion.div>
 
-        {!user_profile.is_private && (
+        {!user_profile.is_private && user_posts && (
           <motion.div>
             <h3 className="text-3xl font-bold mb-6 text-pink-500">En Popüler Gönderiler</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -183,7 +183,7 @@ const ResultsPage = () => {
 const StatCard = ({ icon, value, label }) => (
   <motion.div 
     whileHover={{ scale: 1.05 }}
-    className="text-center bg-indigo-700 rounded-lg p-4 flex flex-col items-center"
+    className="text-center bg-gray-700 bg-opacity-30 rounded-lg p-4 flex flex-col items-center shadow-lg"
   >
     {React.cloneElement(icon, { className: "text-pink-400 mb-2", size: 24 })}
     <span className="text-2xl font-bold">{value}</span>
@@ -208,9 +208,9 @@ const PostCard = ({ post, index, expandedCaptions, toggleCaption, isPrivate }) =
     {!isPrivate ? (
       <div className="p-4">
         <div className={`text-sm mb-2 ${expandedCaptions[index] ? '' : 'h-12 overflow-hidden'}`}>
-          {post.caption.text}
+          {post.caption?.text}
         </div>
-        {post.caption.text && post.caption.text.length > 100 && (
+        {post.caption?.text && post.caption.text.length > 100 && (
           <button 
             onClick={() => toggleCaption(index)}
             className="text-pink-400 text-sm mb-2 hover:underline"
