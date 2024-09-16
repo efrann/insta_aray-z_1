@@ -62,4 +62,5 @@ Bu proje, Instagram kullanıcı adlarını analiz eden bir web uygulamasıdır. 
 
 3. **Push:**
    ```bash
-    git push origin feature/YeniOzellikAdi
+    git push origin
+   # origini main ya da ne ise o olarak değiştirmeyi unutma!
