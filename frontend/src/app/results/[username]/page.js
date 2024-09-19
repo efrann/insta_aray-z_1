@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera } from 'lucide-react';
+import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -51,30 +51,41 @@ const ResultsPage = () => {
 
   const { user_info, user_feed, stories } = data;
 
-  // En çok beğeni alan 6 postu seç
-  const topPosts = user_feed
-    .sort((a, b) => b.like_count - a.like_count)
-    .slice(0, 6);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-700 text-white py-8 px-4">
       <div className="max-w-6xl mx-auto">
         <ProfileHeader user={user_info} />
-        <StoriesSection stories={stories} />
-        <FeedSection feed={topPosts} />
+        {user_info.is_private ? (
+          <PrivateAccountMessage username={user_info.username} />
+        ) : (
+          <>
+            <StoriesSection stories={stories} />
+            <TopPostsSection feed={user_feed} />
+          </>
+        )}
       </div>
     </div>
   );
 };
 
-const formatNumber = (num) => {
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + 'M';
-  }
-  if (num >= 1000) {
-    return (num / 1000).toFixed(1) + 'K';
-  }
-  return num.toString();
+const TopPostsSection = ({ feed }) => {
+  if (!feed || feed.length === 0) return null;
+
+  // Gönderileri beğeni sayısına göre sırala ve en çok beğenilen 6 tanesini al
+  const topPosts = [...feed]
+    .sort((a, b) => b.like_count - a.like_count)
+    .slice(0, 6);
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold mb-4 text-pink-300">En Çok Beğenilen Gönderiler</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {topPosts.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 const ProfileHeader = ({ user }) => (
@@ -113,8 +124,8 @@ const ProfileHeader = ({ user }) => (
     </div>
     <div className="flex justify-around mt-8">
       <StatItem label="Gönderiler" value={user.media_count} />
-      <StatItem label="Takipçiler" value={formatNumber(user.follower_count)} />
-      <StatItem label="Takip" value={formatNumber(user.following_count)} />
+      <StatItem label="Takipçiler" value={user.follower_count} />
+      <StatItem label="Takip" value={user.following_count} />
     </div>
   </motion.div>
 );
@@ -157,14 +168,6 @@ const StoriesSection = ({ stories }) => {
   );
 };
 
-const FeedSection = ({ feed }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {feed.map((post) => (
-      <PostCard key={post.id} post={post} />
-    ))}
-  </div>
-);
-
 const PostCard = ({ post }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
@@ -184,13 +187,31 @@ const PostCard = ({ post }) => (
       <p className="text-sm mb-2 line-clamp-2 text-gray-200">{post.caption}</p>
       <div className="flex justify-between items-center mt-2 text-sm">
         <span className="flex items-center text-pink-400">
-          <Heart className="mr-1" size={16} /> {formatNumber(post.like_count)}
+          <Heart className="mr-1" size={16} /> {post.like_count}
         </span>
         <span className="flex items-center text-blue-400">
-          <MessageCircle className="mr-1" size={16} /> {formatNumber(post.comment_count)}
+          <MessageCircle className="mr-1" size={16} /> {post.comment_count}
         </span>
       </div>
     </div>
+  </motion.div>
+);
+
+const PrivateAccountMessage = ({ username }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl mb-8 text-center"
+  >
+    <Lock size={48} className="mx-auto mb-4 text-pink-500" />
+    <h2 className="text-2xl font-bold mb-2">Gizli Hesap</h2>
+    <p className="text-gray-300">
+      @{username} kullanıcısının hesabı gizli olduğu için daha fazla veri çekilemiyor.
+    </p>
+    <p className="mt-4 text-sm text-gray-400">
+      Gizli hesapların içeriği sadece onaylanmış takipçiler tarafından görüntülenebilir.
+    </p>
   </motion.div>
 );
 

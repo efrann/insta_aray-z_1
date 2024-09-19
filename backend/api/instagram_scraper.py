@@ -106,4 +106,34 @@ def get_highlighted_stories(username):
     
     return highlighted_stories
 
+def get_user_info(username):
+    user_endpoint = f"/v1/user/info?username_or_id_or_url={username}"
+    user_data = get_instagram_data(username, user_endpoint)
+    return process_user_data(user_data)
+
+def get_instagram_data_for_user(username):
+    user_info = get_user_info(username)
+    
+    if user_info.get("is_private", False):
+        logger.info(f"Kullanıcı {username} gizli bir hesaba sahip. Sadece temel bilgiler döndürülüyor.")
+        return {
+            "user_info": user_info,
+            "user_feed": [],
+            "stories": {"Highlighted Stories": []}
+        }
+    
+    # Hesap gizli değilse, post ve hikayeleri çek
+    user_feed = get_all_posts(username)
+    
+    # En çok beğeni alan 6 gönderiyi seç
+    top_posts = sorted(user_feed, key=lambda x: x['like_count'], reverse=True)[:6]
+    
+    stories = {"Highlighted Stories": get_highlighted_stories(username)}
+    
+    return {
+        "user_info": user_info,
+        "user_feed": top_posts,  # Sadece en çok beğeni alan 6 gönderiyi döndür
+        "stories": stories
+    }
+
 # Main bloğunu kaldırdık çünkü bu bir modül olarak kullanılacak
