@@ -122,17 +122,13 @@ def get_instagram_data_for_user(username):
             "stories": {"Highlighted Stories": []}
         }
     
-    # Hesap gizli değilse, post ve hikayeleri çek
+    # Hesap gizli değilse, tüm postları ve hikayeleri çek
     user_feed = get_all_posts(username)
-    
-    # En çok beğeni alan 6 gönderiyi seç
-    top_posts = sorted(user_feed, key=lambda x: x['like_count'], reverse=True)[:6]
-    
     stories = {"Highlighted Stories": get_highlighted_stories(username)}
     
     return {
         "user_info": user_info,
-        "user_feed": top_posts,  # Sadece en çok beğeni alan 6 gönderiyi döndür
+        "user_feed": user_feed,  # Tüm postları döndür
         "stories": stories
     }
 

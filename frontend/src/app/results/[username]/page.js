@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock } from 'lucide-react';
 import Image from 'next/image';
@@ -17,9 +17,21 @@ const ResultsPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const dataFetchedRef = useRef(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      if (dataFetchedRef.current) return;
+      dataFetchedRef.current = true;
+
+      // Local storage'dan veri kontrolü
+      const cachedData = localStorage.getItem(`instagram_data_${username}`);
+      if (cachedData) {
+        setData(JSON.parse(cachedData));
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
         setError(null);
@@ -34,6 +46,8 @@ const ResultsPage = () => {
         
         const result = await response.json();
         setData(result);
+        // Veriyi local storage'a kaydet
+        localStorage.setItem(`instagram_data_${username}`, JSON.stringify(result));
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(error.message);
@@ -51,6 +65,7 @@ const ResultsPage = () => {
 
   const { user_info, user_feed, stories } = data;
 
+  // Tüm feed verilerini state'de tutuyoruz, ama sadece top 6'yı gösteriyoruz
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-700 text-white py-8 px-4">
       <div className="max-w-6xl mx-auto">
