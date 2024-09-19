@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock } from 'lucide-react';
+import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock, ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -18,6 +18,9 @@ const ResultsPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dataFetchedRef = useRef(false);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [filterCriteria, setFilterCriteria] = useState('likes'); // Varsayılan olarak beğeni sayısına göre
+  const [sortOrder, setSortOrder] = useState('desc'); // Varsayılan olarak azalan sırada
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,13 +62,38 @@ const ResultsPage = () => {
     fetchData();
   }, [username]);
 
+  useEffect(() => {
+    if (data && data.user_feed) {
+      filterAndSortPosts(data.user_feed);
+    }
+  }, [data, filterCriteria, sortOrder]);
+
+  const filterAndSortPosts = (posts) => {
+    let sorted = [...posts];
+    sorted.sort((a, b) => {
+      if (filterCriteria === 'date') {
+        return sortOrder === 'desc' 
+          ? new Date(b.taken_at) - new Date(a.taken_at)
+          : new Date(a.taken_at) - new Date(b.taken_at);
+      } else if (filterCriteria === 'likes') {
+        return sortOrder === 'desc' 
+          ? b.like_count - a.like_count
+          : a.like_count - b.like_count;
+      } else if (filterCriteria === 'comments') {
+        return sortOrder === 'desc' 
+          ? b.comment_count - a.comment_count
+          : a.comment_count - b.comment_count;
+      }
+    });
+    setFilteredPosts(sorted.slice(0, 6)); // Sadece ilk 6 postu al
+  };
+
   if (loading) return <LoadingAnimation />;
   if (error) return <div className="text-center text-red-500">{error}</div>;
   if (!data) return <div className="text-center">Veri bulunamadı.</div>;
 
-  const { user_info, user_feed, stories } = data;
+  const { user_info, stories } = data;
 
-  // Tüm feed verilerini state'de tutuyoruz, ama sadece top 6'yı gösteriyoruz
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-700 text-white py-8 px-4">
       <div className="max-w-6xl mx-auto">
@@ -75,7 +103,13 @@ const ResultsPage = () => {
         ) : (
           <>
             <StoriesSection stories={stories} />
-            <TopPostsSection feed={user_feed} />
+            <FilterControls 
+              filterCriteria={filterCriteria} 
+              setFilterCriteria={setFilterCriteria}
+              sortOrder={sortOrder}
+              setSortOrder={setSortOrder}
+            />
+            <TopPostsSection feed={filteredPosts} />
           </>
         )}
       </div>
@@ -83,23 +117,48 @@ const ResultsPage = () => {
   );
 };
 
+const FilterControls = ({ filterCriteria, setFilterCriteria, sortOrder, setSortOrder }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="mb-6 flex justify-between items-center bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4"
+  >
+    <select 
+      value={filterCriteria} 
+      onChange={(e) => setFilterCriteria(e.target.value)}
+      className="bg-gray-800 text-white rounded p-2"
+    >
+      <option value="likes">Beğeni Sayısı</option>
+      <option value="date">Tarih</option>
+      <option value="comments">Yorum Sayısı</option>
+    </select>
+    <button 
+      onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
+      className="flex items-center bg-pink-500 text-white rounded p-2 hover:bg-pink-600 transition-colors duration-200"
+    >
+      <ArrowUpDown className="mr-2" size={16} />
+      {sortOrder === 'desc' ? 'Azalan' : 'Artan'}
+    </button>
+  </motion.div>
+);
+
 const TopPostsSection = ({ feed }) => {
   if (!feed || feed.length === 0) return null;
 
-  // Gönderileri beğeni sayısına göre sırala ve en çok beğenilen 6 tanesini al
-  const topPosts = [...feed]
-    .sort((a, b) => b.like_count - a.like_count)
-    .slice(0, 6);
-
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4 text-pink-300">En Çok Beğenilen Gönderiler</h2>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="text-2xl font-bold mb-4 text-pink-300">Öne Çıkan Gönderiler</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {topPosts.map((post) => (
+        {feed.map((post) => (
           <PostCard key={post.id} post={post} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
