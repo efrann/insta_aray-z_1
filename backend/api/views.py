@@ -3,8 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import logging
 import traceback
-import json
-from .instagram_scraper import get_instagram_data, process_user_data, process_posts_data
+from .instagram_scraper import get_instagram_data, process_user_data, get_all_posts, get_highlighted_stories
 
 logger = logging.getLogger(__name__)
 
@@ -17,28 +16,25 @@ class InstagramAnalyzeView(APIView):
         try:
             logger.info(f"Analyzing profile for username: {username}")
             
-            # Önce kullanıcı verilerini çek ve işle
-            user_data = get_instagram_data(username, "/v1/info?username_or_id_or_url={}&include_about=true")
+            # Kullanıcı verilerini çek ve işle
+            user_endpoint = f"/v1/info?username_or_id_or_url={username}&include_about=true"
+            user_data = get_instagram_data(username, user_endpoint)
             processed_user_data = process_user_data(user_data)
             
-            # İşlenmiş kullanıcı verilerini yazdır (debug amaçlı)
-            print(json.dumps(processed_user_data, indent=4, ensure_ascii=False))
+            # Tüm gönderileri al
+            all_posts = get_all_posts(username)
             
-            # Kullanıcı profili ve gönderilerini birleştir
+            # Öne çıkan hikayeleri al
+            highlighted_stories = get_highlighted_stories(username)
+            
+            # Birleştirilmiş JSON çıktısı oluştur
             combined_data = {
-                "user_profile": processed_user_data["data"],
-                "user_posts": {"items": []}  # Varsayılan olarak boş liste
+                "user_info": processed_user_data,
+                "user_feed": all_posts,
+                "stories": {
+                    "Highlighted Stories": highlighted_stories
+                }
             }
-
-            # Profil gizli değilse post verilerini çek
-            if not processed_user_data["data"]["is_private"]:
-                posts_data = get_instagram_data(username, "/v1.2/posts?username_or_id_or_url={}")
-                processed_posts_data = process_posts_data(posts_data)
-                
-                # İşlenmiş post verilerini yazdır (debug amaçlı)
-                print(json.dumps(processed_posts_data, indent=4, ensure_ascii=False))
-                
-                combined_data["user_posts"] = processed_posts_data["data"]
 
             logger.info(f"Successfully analyzed profile for username: {username}")
             return Response(combined_data)
