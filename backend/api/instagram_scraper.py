@@ -1,6 +1,11 @@
 import http.client
 import json
 import urllib.parse
+import logging
+
+# Logging ayarları
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 def get_instagram_data(username, endpoint, pagination_token=None):
     conn = http.client.HTTPSConnection("instagram-scraper-api2.p.rapidapi.com")
@@ -16,6 +21,15 @@ def get_instagram_data(username, endpoint, pagination_token=None):
     res = conn.getresponse()
     data = res.read()
     return json.loads(data.decode("utf-8"))
+
+def get_caption(item):
+    caption = item.get("caption")
+    if isinstance(caption, dict):
+        return caption.get("text", "")
+    elif isinstance(caption, str):
+        return caption
+    else:
+        return ""
 
 def process_user_data(data):
     if "data" not in data:
@@ -45,7 +59,7 @@ def process_posts_data(data):
     for item in data["data"].get("items", []):
         processed_item = {
             "id": item.get("id", ""),
-            "caption": item.get("caption", {}).get("text", ""),
+            "caption": get_caption(item),
             "like_count": item.get("like_count", 0),
             "comment_count": item.get("comment_count", 0),
             "media_type": item.get("media_type", 0),
@@ -66,17 +80,17 @@ def get_all_posts(username):
         processed_posts = process_posts_data(posts_data)
         
         if isinstance(processed_posts, dict) and "error" in processed_posts:
-            print("Hata:", processed_posts["error"])
+            logger.error(f"Hata: {processed_posts['error']}")
             break
         
         all_posts.extend(processed_posts)
-        print(f"Toplam gönderi sayısı: {len(all_posts)}")
+        logger.info(f"Toplam gönderi sayısı: {len(all_posts)}")
         
         pagination_token = posts_data.get("pagination_token")
         if not pagination_token:
             break
     
-    return all_posts
+    return all_posts  # Tüm postları döndür
 
 def get_highlighted_stories(username):
     highlight_endpoint = f"/v1/highlights?username_or_id_or_url={username}"
@@ -91,3 +105,5 @@ def get_highlighted_stories(username):
         highlighted_stories.append(simplified_item)
     
     return highlighted_stories
+
+# Main bloğunu kaldırdık çünkü bu bir modül olarak kullanılacak

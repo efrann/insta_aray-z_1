@@ -17,6 +17,15 @@ def get_instagram_data(username, endpoint, pagination_token=None):
     data = res.read()
     return json.loads(data.decode("utf-8"))
 
+def get_caption(item):
+    caption = item.get("caption")
+    if isinstance(caption, dict):
+        return caption.get("text", "")
+    elif isinstance(caption, str):
+        return caption
+    else:
+        return ""
+
 def process_user_data(data):
     if "data" not in data:
         return {"error": "Kullanıcı verisi bulunamadı"}
@@ -45,7 +54,7 @@ def process_posts_data(data):
     for item in data["data"].get("items", []):
         processed_item = {
             "id": item.get("id", ""),
-            "caption": item.get("caption", {}).get("text", ""),
+            "caption": get_caption(item),
             "like_count": item.get("like_count", 0),
             "comment_count": item.get("comment_count", 0),
             "media_type": item.get("media_type", 0),
@@ -73,10 +82,10 @@ def get_all_posts(username):
         print(f"Toplam gönderi sayısı: {len(all_posts)}")
         
         pagination_token = posts_data.get("pagination_token")
-        if not pagination_token:
+        if not pagination_token or len(all_posts) >= 12:
             break
     
-    return all_posts
+    return all_posts[:12]  # Sadece son 12 postu döndür
 
 def get_highlighted_stories(username):
     highlight_endpoint = f"/v1/highlights?username_or_id_or_url={username}"

@@ -1,0 +1,128 @@
+Instagram kullanıcı adını girin: Toplam gönderi sayısı: 12
+{
+  "user_info": {
+    "username": "alibicim",
+    "full_name": "Ali Biçim",
+    "follower_count": 1156682,
+    "following_count": 1148,
+    "biography": "Eski Late Night Show Sahibi🌙",
+    "external_url": "",
+    "is_private": false,
+    "is_verified": true,
+    "profile_pic_url": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/422625261_3260312827608525_4264542781780198538_n.jpg?stp=dst-jpg_e0_s150x150&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=1&_nc_ohc=RiT_Hp5fniIQ7kNvgGqZIsS&_nc_gid=1922ebc78c5c475db939d7e783f5f7e4&edm=AO4kU9EBAAAA&ccb=7-5&oh=00_AYDddbifpZ3JzntsK_PRE1jWrCS2wrjKvsptN3BXx0kTeg&oe=66F20750&_nc_sid=164c1d",
+    "media_count": 138
+  },
+  "user_feed": [
+    {
+      "id": "3459919765972936667",
+      "caption": "Nesine’de şans oyunları bakiyemi Hepsipara’ya dönüştürdümsss.🎁 Siz de deneyinisss.😉 #işbirliği @nesine_com @hepsiburada",
+      "like_count": 9827,
+      "comment_count": 199,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/460113620_1918797168596403_6944086697924711425_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi43MjB4MTI4MC5zZHIuZjI5MzUwLmRlZmF1bHRfY292ZXJfZnJhbWUifQ&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=103&_nc_ohc=Y5sBTV3luw8Q7kNvgE0X4IT&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1OTkxOTc2NTk3MjkzNjY2Nw%3D%3D.3-ccb7-5&oh=00_AYCsoxsmiDRB4TcYWmfzvpnZws5uGQbKM91_AFZcQfJKHg&oe=66F1F2F5&_nc_sid=f93d1f",
+      "taken_at": 1726674644
+    },
+    {
+      "id": "3376634462886144222",
+      "caption": "YAŞA FENERBAHÇE💛💙",
+      "like_count": 55985,
+      "comment_count": 1166,
+      "media_type": 1,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/446222376_1099176257812309_1436481007774836293_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi45ODN4OTgzLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=101&_nc_ohc=ssRjfF7VZfkQ7kNvgF8gcfj&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzM3NjYzNDQ2Mjg4NjE0NDIyMg%3D%3D.3-ccb7-5&oh=00_AYB0FQvXOF893Iqlk_l963Qt68HFtjD_CDBSe5Tpl0j3Yg&oe=66F1FC65&_nc_sid=f93d1f",
+      "taken_at": 1716746217
+    },
+    {
+      "id": "3348337179690412083",
+      "caption": "🌙eski late night show sahibi🌙 37 oldu.\nsevgilersss, saygılarsss🤗\niyi ki varsınız şimdidens💋\n\nULAN BESSSSS リニューアル中です",
+      "like_count": 84697,
+      "comment_count": 548,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/438861073_7302181873183682_3761453815026301744_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=102&_nc_ohc=307Ax-UjqlYQ7kNvgEMXhqK&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzM0ODMzNzE3MDQ3OTYwMzMxOQ%3D%3D.3-ccb7-5&oh=00_AYAUHiHDDYa35rGtQLCQbAfbJqSv2KrpOcC00mDs2qvLXw&oe=66F1FD9F&_nc_sid=f93d1f",
+      "taken_at": 1713372918
+    },
+    {
+      "id": "3277367199298182313",
+      "caption": "7-0",
+      "like_count": 57431,
+      "comment_count": 685,
+      "media_type": 1,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/418758217_358364186917738_1250164743992445715_n.jpg?stp=dst-jpg_e35_p1080x1080&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=110&_nc_ohc=nBdI3S_PpK8Q7kNvgGeORIK&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzI3NzM2NzE5OTI5ODE4MjMxMw%3D%3D.3-ccb7-5&oh=00_AYBOUfbiMVwN3iWOPvesnidrEKp4EQulI-9eHuDKJfaqtw&oe=66F1F0A6&_nc_sid=f93d1f",
+      "taken_at": 1704912637
+    },
+    {
+      "id": "3239584114716418593",
+      "caption": "Sen şimdi susuyorsunss yoksa beni duymuyorsunsss🫨",
+      "like_count": 60472,
+      "comment_count": 369,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/403562020_667277328855530_3653013534399969950_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=102&_nc_ohc=BZEsL2VxpbwQ7kNvgEgtQXz&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzIzOTU4NDEwMTI3Nzg2MjgwNA%3D%3D.3-ccb7-5&oh=00_AYCmDLE5qqnOIcfrPc86Sfkzjr7ugKteGADGapCLFtr8ag&oe=66F1F4D3&_nc_sid=f93d1f",
+      "taken_at": 1700408542
+    },
+    {
+      "id": "3198237953033188934",
+      "caption": "Kim kimin kolunu kırıyo kendi kolununssss🥋🥋",
+      "like_count": 181132,
+      "comment_count": 2153,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/380911743_1792287004538029_7355730737616589264_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=101&_nc_ohc=hDmiMzhdrpIQ7kNvgGzJW9O&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzE5ODIzNzk0NzQ3OTc2MDI4Mg%3D%3D.3-ccb7-5&oh=00_AYA9bsvEHms7LqSSouvyT2USZICCVe27awTkXqCdhvrV-A&oe=66F1D3E7&_nc_sid=f93d1f",
+      "taken_at": 1695479695
+    },
+    {
+      "id": "3168349248944566705",
+      "caption": "botokssss yok, mutlu muyusss🍸",
+      "like_count": 76932,
+      "comment_count": 399,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/366468469_3271761453115150_6975465682539576143_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=110&_nc_ohc=QvEIFZXU2W0Q7kNvgGoRnrF&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzE2ODM0OTI0MTgzOTIxNDQ0OQ%3D%3D.3-ccb7-5&oh=00_AYBojxQYRe1StKXpQWXm0W28xCMQZHvv2XhIj4qznzOC8A&oe=66F1FEBB&_nc_sid=f93d1f",
+      "taken_at": 1691916684
+    },
+    {
+      "id": "3123636586020374203",
+      "caption": "Eski dosttan düşman olmaz derler, acaba bunlar en büyük yalanlar mısss🫨 SOBA PODCAST’te bizlerlessss🍸w/ @zeynepbastik",
+      "like_count": 35463,
+      "comment_count": 205,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/353050826_217441964505016_2745269392411440267_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=gaFORvlxME8Q7kNvgGEARnq&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzEyMzYzNjU3Mzg0MDM0MDM4NA%3D%3D.3-ccb7-5&oh=00_AYCH8eglVq970N2ei8Lh8D-6MaHxWhmwvE7lts3RcrbCBg&oe=66F1D5E0&_nc_sid=f93d1f",
+      "taken_at": 1686586519
+    },
+    {
+      "id": "3105268614025578459",
+      "caption": "nasıl aile olduk kisss🥹♥️",
+      "like_count": 62561,
+      "comment_count": 264,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.2885-15/347279802_795529635240485_8770527750849362748_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMTgweDIwOTQuc2RyLmYzNjMyOS5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=105&_nc_ohc=9ywK_2cwWjcQ7kNvgGEeyCm&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzEwNTI2ODYxNDAyNTU3ODQ1OQ%3D%3D.3-ccb7-5&oh=00_AYCUyPT6jqTAS17mvoDFPRCW0NWBI-9unLSDhux70jZMww&oe=66F1EFB7&_nc_sid=f93d1f",
+      "taken_at": 1684396967
+    },
+    {
+      "id": "3074069136442792237",
+      "caption": "Nisan air dumpssss🧳🥤🪶",
+      "like_count": 64202,
+      "comment_count": 264,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/339338500_2400738053425263_5645535588858801293_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=103&_nc_ohc=uEjK8-eiLKEQ7kNvgH7dHCf&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzA3NDA2OTEyMTEwODQ4MjMyOQ%3D%3D.3-ccb7-5&oh=00_AYCF9GhrK9xHnfI5C7aNF-OLk7bbykKZvqt3sn9MmyGxSQ&oe=66F1D8A2&_nc_sid=f93d1f",
+      "taken_at": 1680677619
+    },
+    {
+      "id": "3029410870630909922",
+      "caption": "2 yıldır beklettik kusura bakmayınsss ama beklediğimize değdiss. @cesxcommercial hocamın ellerinden afişlersss, @deryaergn hocamızın müthiş make-up’ıyla adeta devleştiksss🤡🤡🤡",
+      "like_count": 80221,
+      "comment_count": 282,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/328225045_1536661633497948_7985142243147636024_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_cat=100&_nc_ohc=jNSjzZWUax8Q7kNvgEUekKS&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzAyOTQxMDg1OTI0NzU1ODY2OQ%3D%3D.3-ccb7-5&oh=00_AYCuUvaljY94Ye_QZ9-Z-5xXoSzcFkVE9v-pKgiaESQKeA&oe=66F1E30B&_nc_sid=f93d1f",
+      "taken_at": 1675353939
+    },
+    {
+      "id": "3016974041013354362",
+      "caption": "Kısmetse olur muss? W/ @mesutcantomay 18 Ocak YouTube’ta yayındass🤵🏼👰🏼‍♀️",
+      "like_count": 83104,
+      "comment_count": 415,
+      "media_type": 8,
+      "thumbnail_url": "https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/325478162_730222485156871_347215712990392677_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=107&_nc_ohc=azgx9beJzCgQ7kNvgEKyhBe&_nc_gid=2dd0faea981c4e43b7987ee49b4a131f&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzAxNjk3NDAzNTk5NzAxMjI3OQ%3D%3D.3-ccb7-5&oh=00_AYAQ1ycBj5M24scsihRIIB2FHz0TJZyO7J-t_mxZ8AAjPQ&oe=66F1E243&_nc_sid=f93d1f",
+      "taken_at": 1673871353
+    }
+  ],
+  "stories": {
+    "Highlighted Stories": []
+  }
+}

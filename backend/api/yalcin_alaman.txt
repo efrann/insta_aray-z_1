@@ -1,0 +1,149 @@
+Instagram kullanıcı adını girin: Toplam gönderi sayısı: 12
+{
+  "user_info": {
+    "username": "yalcin_alaman",
+    "full_name": "Mehmet Yalçın Alaman",
+    "follower_count": 1239,
+    "following_count": 937,
+    "biography": "computer engineering • gtu\nmarketing communication & social media • @lcw_com \nmentor • @gtuieee \n“a dragon is not a slave”",
+    "external_url": "http://twitch.tv/perzyslol/",
+    "is_private": false,
+    "is_verified": false,
+    "profile_pic_url": "https://scontent-atl3-2.cdninstagram.com/v/t51.2885-19/361722738_837557281340966_8618346071789505777_n.jpg?stp=dst-jpg_e0_s150x150&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=102&_nc_ohc=pvy4ngPNftMQ7kNvgHJI1Xp&_nc_gid=beb926b1b97041388db36756076157cf&edm=AO4kU9EBAAAA&ccb=7-5&oh=00_AYB5LqxIy0LAnCUwLSf2fiQwuYR9RYEU-Y1cmK6tUHjR0g&oe=66F1F016&_nc_sid=164c1d",
+    "media_count": 38
+  },
+  "user_feed": [
+    {
+      "id": "3459933238497385573",
+      "caption": "Influencer’lığa yeni bir boyut kazandırıyorum ve almamanız gereken ürünleri paylaşıyorum 😜 Siz de katılıyor musunuz yorumlarda paylaşınn 😉\n\n#alışveriş #öneri #reklam",
+      "like_count": 92,
+      "comment_count": 12,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/459874866_436650276084375_4489592696132896043_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=103&_nc_ohc=j5JJ-FsNr-AQ7kNvgGCZXXo&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1OTkzMzIzODQ5NzM4NTU3Mw%3D%3D.3-ccb7-5&oh=00_AYCMYqMY9nMU2l0jBN7uuue1dJRtOBp34fWeaUJaEkENfg&oe=66F203FD&_nc_sid=f93d1f",
+      "taken_at": 1726676355
+    },
+    {
+      "id": "3458470472863544026",
+      "caption": "Bu aralar davetten davete koşturuyorum 😜 @irem.zturk canım arkadaşım mutluluklar diliyoruz ben ve takipçilerim 🫶🫶 \n\n#vlog",
+      "like_count": 101,
+      "comment_count": 7,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra5-1.cdninstagram.com/v/t51.29350-15/460022213_450296788044874_3182162603389865995_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_cat=110&_nc_ohc=9JE6nnPHsGAQ7kNvgGRxqzH&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1ODQ3MDQ3Mjg2MzU0NDAyNg%3D%3D.3-ccb7-5&oh=00_AYC4lf0u2xfnHCb13zFU2LrcwpcpCl_XrMhQwkUiNsj57A&oe=66F2024D&_nc_sid=f93d1f",
+      "taken_at": 1726501860
+    },
+    {
+      "id": "3457726976913374430",
+      "caption": "En kötü günümüz böyle olsun 😜 #vlog #after #düğün #wedding",
+      "like_count": 138,
+      "comment_count": 19,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra5-2.cdninstagram.com/v/t51.29350-15/459714123_1289626228685407_5662613116945209755_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_cat=107&_nc_ohc=hfJdwv3fH7UQ7kNvgFrFnbQ&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1NzcyNjk3NjkxMzM3NDQzMA%3D%3D.3-ccb7-5&oh=00_AYDWs6cCLfQ4gCwxEwoiSZwa2W9hX0NTGSglFs5hnaNnRg&oe=66F1F78D&_nc_sid=f93d1f",
+      "taken_at": 1726413728
+    },
+    {
+      "id": "3457128372901336500",
+      "caption": "Tekne eventine hazırlanıyoruz #davet 😜\n\n#grwm #menfashion #erkekgiyim #erkekmoda",
+      "like_count": 131,
+      "comment_count": 15,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/459557933_1671267290338004_6923973720189780698_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=108&_nc_ohc=h4lxdPrJQ2sQ7kNvgE-A0o2&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1NzEyODM3MjkwMTMzNjUwMA%3D%3D.3-ccb7-5&oh=00_AYDrWCcCbXMODy-CmAgDSQlXKwhqP3oO3LtZMkN0bmTSgQ&oe=66F1EDC2&_nc_sid=f93d1f",
+      "taken_at": 1726341968
+    },
+    {
+      "id": "3454078914504456055",
+      "caption": "Canım arkadaşım hep destek tam destek 🥹🫶 #ofis #work",
+      "like_count": 134,
+      "comment_count": 6,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/458924709_1878412169236580_3733776989421077794_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=108&_nc_ohc=i_n_LRb6Yd8Q7kNvgEARVlr&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1NDA3ODkxNDUwNDQ1NjA1NQ%3D%3D.3-ccb7-5&oh=00_AYDLn5fFr85PyaXQxyKgmq5WX2Se-KPRT3UfCfDYLj6OBg&oe=66F20462&_nc_sid=f93d1f",
+      "taken_at": 1725978462
+    },
+    {
+      "id": "3453457662441998238",
+      "caption": "Başka bir sebebe ihtiyaç yok bence 😜",
+      "like_count": 131,
+      "comment_count": 14,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra5-2.cdninstagram.com/v/t51.29350-15/459042120_540879335170314_6929417342197399891_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_cat=106&_nc_ohc=VXCHTSwaAWsQ7kNvgG3F6Xx&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1MzQ1NzY2MjQ0MTk5ODIzOA%3D%3D.3-ccb7-5&oh=00_AYDWEDr24OSwosOuFqrWe10RzYxwOpqlhupD2adI-Z4Q3Q&oe=66F1EB59&_nc_sid=f93d1f",
+      "taken_at": 1725904482
+    },
+    {
+      "id": "3452776585939607438",
+      "caption": "Yakın zamanda araba vs alacak/satacak arkadaşınız varsa bilgilenmesi için gönderin 🥲 Noterci abla sağolsun kurtardı beni dolandırılmaktan 🥹 \n\n#dolandırıcılık #araba #tedbir #bilgilendirme #dikkat #dolandırıcı",
+      "like_count": 105,
+      "comment_count": 10,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra5-1.cdninstagram.com/v/t51.29350-15/458793797_541404628327896_3747688485131982183_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_cat=100&_nc_ohc=sAgaeRpkeowQ7kNvgFqto9t&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1Mjc3NjU4NTkzOTYwNzQzOA%3D%3D.3-ccb7-5&oh=00_AYDa1qrbmyU77wRSzcjFZyyfdLZtJg0I7Gg0Pk39YTvW6g&oe=66F1FE11&_nc_sid=f93d1f",
+      "taken_at": 1725823260
+    },
+    {
+      "id": "3452000386086648127",
+      "caption": "Şaka bir yana hiç diyet ve spor yapmadan (hatta abartıp her gün saçma sapan beslenerek) 1 kilo vermişim… 🥲 Diyete tekrar başlayınca bununla destekleyerek güzel sonuçlar elde edilebilir 🫠 #diyet #kiloverme #internalshower",
+      "like_count": 104,
+      "comment_count": 8,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/458611094_522193646998040_4136543290184143434_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=108&_nc_ohc=XuGBgfVKApcQ7kNvgG557m8&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1MjAwMDM4NjA4NjY0ODEyNw%3D%3D.3-ccb7-5&oh=00_AYBcmQmqhUrLLbel3vIrTgCayHv17Q-P_uNm45G_cWpEQQ&oe=66F1DE4E&_nc_sid=f93d1f",
+      "taken_at": 1725730558
+    },
+    {
+      "id": "3451265553882462737",
+      "caption": "TikTok videolarımı görüp beni etkinliğine davet etmiş. onure oldum 😜#davet #tiktok #vlog",
+      "like_count": 90,
+      "comment_count": 4,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/458465203_492757963507592_817407734687549181_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi42NjB4MTE3Ni5zZHIuZjI5MzUwLmRlZmF1bHRfY292ZXJfZnJhbWUifQ&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=108&_nc_ohc=TAmPZkA9b_MQ7kNvgEdwqcL&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1MTI2NTU1Mzg4MjQ2MjczNw%3D%3D.3-ccb7-5&oh=00_AYCOFgbIzCXvT8Gp4vpWnnMePD3CdOKPp-Aa2tIsb79NyQ&oe=66F1E59F&_nc_sid=f93d1f",
+      "taken_at": 1725643028
+    },
+    {
+      "id": "3450582736106162650",
+      "caption": "Benim bu çözüm odaklılığım 😁😁 #ofis #reklam",
+      "like_count": 120,
+      "comment_count": 12,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra5-1.cdninstagram.com/v/t51.29350-15/458510062_2217248398674696_1724908505004460984_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi42ODR4MTIxNi5zZHIuZjI5MzUwLmRlZmF1bHRfY292ZXJfZnJhbWUifQ&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_cat=100&_nc_ohc=k9Jr-5hkOhEQ7kNvgE5xDit&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ1MDU4MjczNjEwNjE2MjY1MDM1ODgyNDAxMzgxNDI0NDQ%3D.3-ccb7-5&oh=00_AYD01aBdJ3--ms4TLk9r4PWb9ZoMAD1hthy8BK4zhZK67A&oe=66F1EE19&_nc_sid=f93d1f",
+      "taken_at": 1725561722
+    },
+    {
+      "id": "3449835070170740448",
+      "caption": "Ofis günlükleri vol 2 😁😁 sonunu yaparken çok eğlendim ahshshskl #ofis #office #vlog #ofisgünlükleri #lcwaikiki",
+      "like_count": 154,
+      "comment_count": 24,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra3-2.cdninstagram.com/v/t51.29350-15/458274196_1069578261217907_6795891998174863480_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra3-2.cdninstagram.com&_nc_cat=111&_nc_ohc=jU6ky5UgyiEQ7kNvgHVgEW4&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ0OTgzNTA3MDE3MDc0MDQ0OA%3D%3D.3-ccb7-5&oh=00_AYDKmLDAflEI6RAIreEaTkplu4VS6ELdIuHj8puVctFttQ&oe=66F1EABA&_nc_sid=f93d1f",
+      "taken_at": 1725472767
+    },
+    {
+      "id": "3449008435330802674",
+      "caption": "Şöyle bir geçiş 😂 @benzeynus arkadaşımı bir gün sakatlamam umarım 😜 \n\n#geçiş #transition #blackpanther",
+      "like_count": 197,
+      "comment_count": 21,
+      "media_type": 2,
+      "thumbnail_url": "https://scontent-fra5-2.cdninstagram.com/v/t51.29350-15/458197518_2180095615697973_2287141602161244056_n.jpg?stp=dst-jpg_e15_p360x360&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmYyOTM1MC5kZWZhdWx0X2NvdmVyX2ZyYW1lIn0&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_cat=109&_nc_ohc=LkXTu9kRCeAQ7kNvgEA3jhj&_nc_gid=7b1ce22100ce4b9ba8e2e58359359cdb&edm=AJgCAUABAAAA&ccb=7-5&ig_cache_key=MzQ0OTAwODQzNTMzMDgwMjY3NA%3D%3D.3-ccb7-5&oh=00_AYBL2xSxWnGk8P5nnFxHevwLDOxyMfGpSUPn1OzEJV-TeQ&oe=66F1DD91&_nc_sid=f93d1f",
+      "taken_at": 1725374234
+    }
+  ],
+  "stories": {
+    "Highlighted Stories": [
+      {
+        "title": "Amsterdam 🇳🇱",
+        "cover_image_url": "https://instagram.fmbx1-1.fna.fbcdn.net/v/t51.29350-15/448611746_1516397245971208_2625413925089210181_n.jpg?stp=c0.501.1290.1290a_dst-jpg_e35_s150x150&_nc_ad=z-m&_nc_ht=instagram.fmbx1-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=QSaWYnbk78wQ7kNvgEVVyxI&_nc_gid=ddfc6452f18f46ab8d723fcc96df4ed5&edm=ALbqBD0BAAAA&ccb=7-5&oh=00_AYD9R00qjcOMVRfyl1Aq2IXQWU3XtX6KqD-fLcchfS8btg&oe=66F1DAD4&_nc_sid=847350"
+      },
+      {
+        "title": "Brugge 🇧🇪",
+        "cover_image_url": "https://instagram.fmbx1-1.fna.fbcdn.net/v/t51.29350-15/448609092_2139614416404153_6473083010219876215_n.jpg?stp=c0.501.1290.1290a_dst-jpg_e35_s150x150&_nc_ad=z-m&_nc_ht=instagram.fmbx1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=-aRYi7eIyCQQ7kNvgHyyjR5&_nc_gid=ddfc6452f18f46ab8d723fcc96df4ed5&edm=ALbqBD0BAAAA&ccb=7-5&oh=00_AYCDrwKOM0-Vy0KkJG8N-62LquBGEsJfGoJ3pJQXPBMgZQ&oe=66F1DF8F&_nc_sid=847350"
+      },
+      {
+        "title": "Aachen 🇩🇪",
+        "cover_image_url": "https://instagram.fmbx1-1.fna.fbcdn.net/v/t51.29350-15/448504198_511349388144959_3194265394438704894_n.jpg?stp=c0.501.1290.1290a_dst-jpg_e35_s150x150&_nc_ad=z-m&_nc_ht=instagram.fmbx1-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=QvDsyncrjhUQ7kNvgHUXcZ2&_nc_gid=ddfc6452f18f46ab8d723fcc96df4ed5&edm=ALbqBD0BAAAA&ccb=7-5&oh=00_AYBJkFOqPwxVCUbPSiIZuAl67wM89fVmQOIBd5iRhX7oSg&oe=66F1DEE1&_nc_sid=847350"
+      },
+      {
+        "title": "Cologne 🇩🇪",
+        "cover_image_url": "https://instagram.fmbx1-1.fna.fbcdn.net/v/t51.29350-15/448414284_1203002024395256_6255797160684051173_n.jpg?stp=c0.501.1290.1290a_dst-jpg_e35_s150x150&_nc_ad=z-m&_nc_ht=instagram.fmbx1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=H_vsQ-EG23QQ7kNvgGG5_PQ&_nc_gid=ddfc6452f18f46ab8d723fcc96df4ed5&edm=ALbqBD0BAAAA&ccb=7-5&oh=00_AYCzd9bpmJgdkQCj6w5J2RJI0ngsE6bXmFb2t8ALfz8RJQ&oe=66F1EEDB&_nc_sid=847350"
+      },
+      {
+        "title": "Reels Link",
+        "cover_image_url": "https://instagram.fmbx1-1.fna.fbcdn.net/v/t51.2885-15/458154578_400967939335053_8306499711291792592_n.jpg?stp=c0.247.640.640a_dst-jpg_e15_s150x150&_nc_ad=z-m&_nc_ht=instagram.fmbx1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=6FYqpWmOBwkQ7kNvgGKKNrT&_nc_gid=ddfc6452f18f46ab8d723fcc96df4ed5&edm=ALbqBD0BAAAA&ccb=7-5&oh=00_AYA3AnhySuPyRcdiY5sA2vXqrcBMhdbSMj1YLlUUD01oSg&oe=66F20C5A&_nc_sid=847350"
+      }
+    ]
+  }
+}
