@@ -127,11 +127,11 @@ def get_limited_posts(username, limit=12):
         limited_posts.extend(processed_posts[:limit - len(limited_posts)])
         logger.info(f"Toplam gönderi sayısı: {len(limited_posts)}")
         
-        if len(processed_posts) < limit - len(limited_posts):
-            pagination_token = posts_data.get("pagination_token")
-            if not pagination_token:
-                break
-        else:
+        if len(processed_posts) < 12:  # Eğer bir sayfada 12'den az post varsa, bu son sayfadır
+            break
+        
+        pagination_token = posts_data.get("pagination_token")
+        if not pagination_token:
             break
     
     return limited_posts
@@ -150,7 +150,7 @@ def get_instagram_data_for_user(username, analysis_type='simple'):
     if analysis_type == 'simple':
         user_feed = get_limited_posts(username, 12)
     else:
-        user_feed = get_all_posts(username)
+        user_feed = get_limited_posts(username, 96)  # Detaylı analiz için 96 post çekiyoruz
     
     stories = {"Highlighted Stories": get_highlighted_stories(username)}
     
