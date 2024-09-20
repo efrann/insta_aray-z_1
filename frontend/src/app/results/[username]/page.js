@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock, ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
@@ -19,48 +19,44 @@ const ResultsPage = () => {
   const [error, setError] = useState(null);
   const dataFetchedRef = useRef(false);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  const [filterCriteria, setFilterCriteria] = useState('likes'); // Varsayılan olarak beğeni sayısına göre
-  const [sortOrder, setSortOrder] = useState('desc'); // Varsayılan olarak azalan sırada
+  const [filterCriteria, setFilterCriteria] = useState('likes');
+  const [sortOrder, setSortOrder] = useState('desc');
+  const [analysisType, setAnalysisType] = useState('simple');
+
+  const fetchData = async (type) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(`/api/analyze`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, analysis_type: type }),
+      });
+
+      if (!response.ok) throw new Error('Failed to fetch data');
+      
+      const result = await response.json();
+      setData(result);
+      setFilteredPosts(result.user_feed);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (dataFetchedRef.current) return;
-      dataFetchedRef.current = true;
-
-      // Local storage'dan veri kontrolü
-      const cachedData = localStorage.getItem(`instagram_data_${username}`);
-      if (cachedData) {
-        setData(JSON.parse(cachedData));
-        setLoading(false);
-        return;
-      }
-
-      try {
-        setLoading(true);
-        setError(null);
-
-        const response = await fetch(`/api/analyze`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username }),
-        });
-
-        if (!response.ok) throw new Error('Failed to fetch data');
-        
-        const result = await response.json();
-        setData(result);
-        // Veriyi local storage'a kaydet
-        localStorage.setItem(`instagram_data_${username}`, JSON.stringify(result));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
+    if (dataFetchedRef.current) return;
+    dataFetchedRef.current = true;
+    fetchData(analysisType);
   }, [username]);
+
+  const handleDetailedAnalysis = () => {
+    setAnalysisType('detailed');
+    fetchData('detailed');
+  };
 
   useEffect(() => {
     if (data && data.user_feed) {
@@ -85,7 +81,7 @@ const ResultsPage = () => {
           : a.comment_count - b.comment_count;
       }
     });
-    setFilteredPosts(sorted.slice(0, 6)); // Sadece ilk 6 postu al
+    setFilteredPosts(sorted.slice(0, 6));
   };
 
   if (loading) return <LoadingAnimation />;
@@ -110,6 +106,14 @@ const ResultsPage = () => {
               setSortOrder={setSortOrder}
             />
             <TopPostsSection feed={filteredPosts} />
+            {analysisType === 'simple' && (
+              <button
+                onClick={handleDetailedAnalysis}
+                className="mt-4 bg-pink-500 text-white rounded p-2 hover:bg-pink-600 transition-colors duration-200"
+              >
+                Detaylı Analiz İçin Tıklayın
+              </button>
+            )}
           </>
         )}
       </div>

@@ -111,7 +111,32 @@ def get_user_info(username):
     user_data = get_instagram_data(username, user_endpoint)
     return process_user_data(user_data)
 
-def get_instagram_data_for_user(username):
+def get_limited_posts(username, limit=12):
+    posts_endpoint = f"/v1.2/posts?username_or_id_or_url={username}"
+    limited_posts = []
+    pagination_token = None
+    
+    while len(limited_posts) < limit:
+        posts_data = get_instagram_data(username, posts_endpoint, pagination_token)
+        processed_posts = process_posts_data(posts_data)
+        
+        if isinstance(processed_posts, dict) and "error" in processed_posts:
+            logger.error(f"Hata: {processed_posts['error']}")
+            break
+        
+        limited_posts.extend(processed_posts[:limit - len(limited_posts)])
+        logger.info(f"Toplam gönderi sayısı: {len(limited_posts)}")
+        
+        if len(processed_posts) < limit - len(limited_posts):
+            pagination_token = posts_data.get("pagination_token")
+            if not pagination_token:
+                break
+        else:
+            break
+    
+    return limited_posts
+
+def get_instagram_data_for_user(username, analysis_type='simple'):
     user_info = get_user_info(username)
     
     if user_info.get("is_private", False):
@@ -122,13 +147,16 @@ def get_instagram_data_for_user(username):
             "stories": {"Highlighted Stories": []}
         }
     
-    # Hesap gizli değilse, tüm postları ve hikayeleri çek
-    user_feed = get_all_posts(username)
+    if analysis_type == 'simple':
+        user_feed = get_limited_posts(username, 12)
+    else:
+        user_feed = get_all_posts(username)
+    
     stories = {"Highlighted Stories": get_highlighted_stories(username)}
     
     return {
         "user_info": user_info,
-        "user_feed": user_feed,  # Tüm postları döndür
+        "user_feed": user_feed,
         "stories": stories
     }
 

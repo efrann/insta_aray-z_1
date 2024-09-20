@@ -3,38 +3,31 @@ from rest_framework.response import Response
 from rest_framework import status
 import logging
 import traceback
-from .instagram_scraper import get_instagram_data, process_user_data, get_all_posts, get_highlighted_stories
+from .instagram_scraper import get_instagram_data, process_user_data, get_instagram_data_for_user
 
 logger = logging.getLogger(__name__)
 
 class InstagramAnalyzeView(APIView):
     def post(self, request):
         username = request.data.get('username')
+        analysis_type = request.data.get('analysis_type', 'simple')
+        
         if not username:
             return Response({'error': 'Username is required'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            logger.info(f"Analyzing profile for username: {username}")
+            logger.info(f"Analyzing profile for username: {username}, analysis type: {analysis_type}")
             
             # Kullanıcı verilerini çek ve işle
             user_endpoint = f"/v1/info?username_or_id_or_url={username}&include_about=true"
             user_data = get_instagram_data(username, user_endpoint)
             processed_user_data = process_user_data(user_data)
             
-            # Tüm gönderileri al
-            all_posts = get_all_posts(username)
+            # Diğer verileri çek
+            combined_data = get_instagram_data_for_user(username, analysis_type)
             
-            # Öne çıkan hikayeleri al
-            highlighted_stories = get_highlighted_stories(username)
-            
-            # Birleştirilmiş JSON çıktısı oluştur
-            combined_data = {
-                "user_info": processed_user_data,
-                "user_feed": all_posts,
-                "stories": {
-                    "Highlighted Stories": highlighted_stories
-                }
-            }
+            # User bilgilerini güncelle
+            combined_data['user_info'] = processed_user_data
 
             logger.info(f"Successfully analyzed profile for username: {username}")
             return Response(combined_data)
