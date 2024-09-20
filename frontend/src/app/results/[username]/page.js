@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock, ArrowUpDown } from 'lucide-react';
+import { User, Image as LucideImage, MessageCircle, Heart, Link as LinkIcon, Camera, Lock, ArrowUpDown, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -99,6 +99,9 @@ const ResultsPage = () => {
         ) : (
           <>
             <StoriesSection stories={stories} />
+            {analysisType === 'simple' && (
+              <DetailedAnalysisPromo handleDetailedAnalysis={handleDetailedAnalysis} />
+            )}
             <FilterControls 
               filterCriteria={filterCriteria} 
               setFilterCriteria={setFilterCriteria}
@@ -106,14 +109,6 @@ const ResultsPage = () => {
               setSortOrder={setSortOrder}
             />
             <TopPostsSection feed={filteredPosts} />
-            {analysisType === 'simple' && (
-              <button
-                onClick={handleDetailedAnalysis}
-                className="mt-4 bg-pink-500 text-white rounded p-2 hover:bg-pink-600 transition-colors duration-200"
-              >
-                Detaylı Analiz İçin Tıklayın
-              </button>
-            )}
           </>
         )}
       </div>
@@ -166,6 +161,16 @@ const TopPostsSection = ({ feed }) => {
   );
 };
 
+const formatNumber = (num) => {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'M';
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  } else {
+    return num.toString();
+  }
+};
+
 const ProfileHeader = ({ user }) => (
   <motion.div 
     initial={{ opacity: 0, y: 50 }}
@@ -201,9 +206,9 @@ const ProfileHeader = ({ user }) => (
       </div>
     </div>
     <div className="flex justify-around mt-8">
-      <StatItem label="Gönderiler" value={user.media_count} />
-      <StatItem label="Takipçiler" value={user.follower_count} />
-      <StatItem label="Takip" value={user.following_count} />
+      <StatItem label="Gönderiler" value={formatNumber(user.media_count)} />
+      <StatItem label="Takipçiler" value={formatNumber(user.follower_count)} />
+      <StatItem label="Takip" value={formatNumber(user.following_count)} />
     </div>
   </motion.div>
 );
@@ -290,6 +295,29 @@ const PrivateAccountMessage = ({ username }) => (
     <p className="mt-4 text-sm text-gray-400">
       Gizli hesapların içeriği sadece onaylanmış takipçiler tarafından görüntülenebilir.
     </p>
+  </motion.div>
+);
+
+const DetailedAnalysisPromo = ({ handleDetailedAnalysis }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg shadow-lg p-6 my-8 text-white"
+  >
+    <h2 className="text-2xl font-bold mb-4">Detaylı Analiz ile Profilinizi Derinlemesine Keşfedin!</h2>
+    <p className="mb-6">Tüm gönderilerinizin analizi, etkileşim oranları, en iyi performans gösteren içerikler ve daha fazlası...</p>
+    <div className="flex justify-center">
+      <motion.button
+        onClick={handleDetailedAnalysis}
+        className="bg-white text-purple-600 font-bold py-3 px-8 rounded-full hover:bg-purple-100 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Detaylı Analizi Başlat
+        <ArrowRight className="inline-block ml-2" />
+      </motion.button>
+    </div>
   </motion.div>
 );
 
