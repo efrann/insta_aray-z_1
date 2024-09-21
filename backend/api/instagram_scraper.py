@@ -1,5 +1,6 @@
 import http.client
 import json
+import ssl
 import urllib.parse
 import logging
 
@@ -8,7 +9,8 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 def get_instagram_data(username, endpoint, pagination_token=None):
-    conn = http.client.HTTPSConnection("instagram-scraper-api2.p.rapidapi.com")
+    context = ssl._create_unverified_context()
+    conn = http.client.HTTPSConnection("instagram-scraper-api2.p.rapidapi.com", context=context)
     headers = {
         'X-RapidAPI-Key': "9cf1b4a59emsh2f1920dd6f80a7ap1c60abjsn20a97356e1d4",
         'X-RapidAPI-Host': "instagram-scraper-api2.p.rapidapi.com"
