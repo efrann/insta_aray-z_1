@@ -37,6 +37,7 @@ const ResultsPage = () => {
       if (!response.ok) throw new Error('Failed to fetch data');
       
       const result = await response.json();
+      console.log('Simple Analysis Sonuc:', result); // Burada result'ı logluyoruz
       setData(result);
       setFilteredPosts(result.user_feed);
     } catch (error) {
